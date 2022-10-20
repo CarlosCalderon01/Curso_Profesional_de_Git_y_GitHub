@@ -1,0 +1,74 @@
+COMPONENTS OF GITS
+
+Working Directory --> Staging Area --> Committed Files --> Remote Repository (Server)
+
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - COMMANDS FOR REPOSITORY //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//
+
+    1-) git init [file] --> inicializa un repositorio de GIT.
+
+    2-) git clone [URL HTTPS] --> Descarga el repositorio
+
+    3-) git status --> ofrece una descripción del estado de los archivos
+            (untracked, ready to commit, nothing to commit).
+
+    4-) git add [file || .]: añade los archivos especificados al área de preparación (staging).
+
+    5-) git commit -m “[commit description]”: confirma los archivos que se encuentran
+            en el área de preparación y los agrega al repositorio.
+
+    6-) git push [name][branch] --> Committed Files Save In Remote Repository
+    
+    OTHERS - COMMANDS:
+
+    1-) git reset <commit> --soft/hard: regresa al commit especificado, eliminando
+            todos los cambios que se hicieron después de ese commit.
+
+    2-) git rm (. -r, filename) (--cached): remueve los archivos del index.
+
+    Volver en el tiempo con branches y checkout:
+
+    3-) git checkout <commit/branch> <filename>: permite regresaral estado en el cual se realizó
+            un commit o branch especificado, pero no elimina lo que está en el staging area.
+
+    4-) git checkout --<filePath>: deshacer cambios en un archivo en estado modified
+            (que ni fue agregado a staging)
+
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - COMMANDS FOR REPOSITORY //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//
+
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - SHOW DIFERENTS //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//
+
+    1-) git log: lista de manera descendente los commits realizados.
+
+    2-) git log --stat: además de listar los commits, muestra la cantidad de bytes añadidos
+            y eliminados en cada uno de los archivos modificados.
+
+    3-) git log --all --graph --decorate --oneline: muestra de manera comprimida
+            toda la historia del repositorio de manera gráfica y embellecida.
+
+    4-) git show filename: permite ver la historia de los cambios en un archivo.
+
+    5-) git diff <commit1> <commit2>: compara diferencias entre en cambios confirmados.
+
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - SHOW DIFERENTS //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//
+
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - COMMANDS FOR CONFIG //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//
+
+    1-) git config --global user.email [TU EMAIL]
+
+    2-) git config --global user.name [TU NOMBRE]
+
+    3-) git config --list: lista las configuraciones.
+            
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - COMMANDS FOR CONFIG //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//

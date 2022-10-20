@@ -1,8 +1,8 @@
 Curso Profesional de Git y GitHub
 
-Introducción a Git
+    Introducción a Git
 
-1-) Clase [1-43] - ¿Por qué usar un sistema de control de versiones como Git?
+    1-) Clase [1-43] - ¿Por qué usar un sistema de control de versiones como Git?
 
         Un sistema de control de versiones como Git nos ayuda a guardar el historial de cambios y crecimiento de los archivos de nuestro proyecto.
 
@@ -11,7 +11,7 @@ Introducción a Git
             El comando para almacenar definitivamente todos los cambios que por ahora viven en el staging area es git commit. También podemos guardar un mensaje para recordar muy bien qué cambios hicimos en este commit con el argumento -m "Mensaje del commit".
             Por último, si queremos mandar nuestros commits a un servidor remoto, un lugar donde todos podamos conectar nuestros proyectos, usamos el comando git push.
 
-        Comandos básicos de git:
+            Comandos básicos de git:
 
             git init: inicializa un repositorio de GIT en la carpeta donde se ejecute el comando.
             git add: añade los archivos especificados al área de preparación (staging).
@@ -23,7 +23,7 @@ Introducción a Git
             git config --global user.name <Nombre como se verá en los commits>: configura un nombre.
             git config --list: lista las configuraciones.
 
-        Analizar cambios en los archivos de un proyecto Git:
+            Analizar cambios en los archivos de un proyecto Git:
 
             git log: lista de manera descendente los commits realizados.
             git log --stat: además de listar los commits, muestra la cantidad de bytes añadidos y eliminados en cada uno de los archivos modificados.
