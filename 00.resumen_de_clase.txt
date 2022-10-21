@@ -1,4 +1,4 @@
-COMPONENTS OF GITS
+    COMPONENTS OF GITS: //----------//----------//----------//----------//----------//
 
 Working Directory --> Staging Area --> Committed Files --> Remote Repository (Server)
 
@@ -20,20 +20,68 @@ Working Directory --> Staging Area --> Committed Files --> Remote Repository (Se
 
     6-) git push [name][branch] --> Committed Files Save In Remote Repository
     
-    OTHERS - COMMANDS:
-
-    1-) git reset <commit> --soft/hard: regresa al commit especificado, eliminando
-            todos los cambios que se hicieron después de ese commit.
-
-    2-) git rm (. -r, filename) (--cached): remueve los archivos del index.
+        OTHERS - COMMANDS: //----------//----------//----------//----------//----------//
 
     Volver en el tiempo con branches y checkout:
 
-    3-) git checkout <commit/branch> <filename>: permite regresaral estado en el cual se realizó
+    1-) git checkout <commit/branch> <filename>: permite regresaral estado en el cual se realizó
             un commit o branch especificado, pero no elimina lo que está en el staging area.
 
-    4-) git checkout --<filePath>: deshacer cambios en un archivo en estado modified
+    2-) git checkout --<filePath>: deshacer cambios en un archivo en estado modified
             (que ni fue agregado a staging)
+
+    3-) Comandos para trabajo remoto con GIT.
+
+    4-) git fetch: Lo usamos para traer actualizaciones del servidor remoto y
+            guardarlas en nuestro repositorio local (en caso de que hayan, por supuesto).
+
+    5-) git merge: También usamos el comando git merge con servidores remotos.
+            Lo necesitamos para combinar los últimos cambios del servidor remoto y
+            nuestro directorio de trabajo.
+
+    6-) git pull: Básicamente, git fetch y git merge al mismo tiempo.
+            
+//----------//----------// GIT RM Y RESET //----------//----------//
+
+    RM: git rm no puede usarse por sí solo, así nomás.
+        Se debe utilizar uno de los flags para indicar a Git cómo eliminar los archivos
+        que ya no se necesitan en la última versión del proyecto:
+
+    1-) git rm (. -r, filename) (--cached): remueve los archivos del index.
+
+    2-) git rm --cached <archivo/s>: elimina los archivos del área de Staging y
+            del próximo commit, pero los mantiene en nuestro disco duro.
+
+    3-) git rm --force <archivo/s>: elimina los archivos de Git y del disco duro.
+            Git siempre guarda todo, por lo que podemos acceder al registro de la existencia
+            de los archivos, de modo que podremos recuperarlos si es necesario
+            (pero debemos aplicar comandos más avanzados).
+            
+    Note: Este comando nos ayuda a eliminar archivos de Git sin eliminar su historial
+        del sistema de versiones. Esto quiere decir que si necesitamos recuperar
+        el archivo solo debemos “viajar en el tiempo” y recuperar el último commit antes
+        de borrar el archivo en cuestión.
+
+//----------// GIT RESET //----------//----------//----------//----------//
+
+    Con git reset volvemos al pasado sin la posibilidad de volver al futuro.
+        Borramos la historia y la debemos sobreescribir.
+        
+    1-) git reset <commit> --soft/hard: regresa al commit especificado, eliminando
+            todos los cambios que se hicieron después de ese commit.
+
+    2-) git reset [Id_Git] --soft: Vuelve el branch al estado del commit especificado,
+            manteniendo los archivos en el directorio de trabajo y lo que haya
+            en staging considerando todo como nuevos cambios. Así podemos aplicar
+            las últimas actualizaciones a un nuevo commit.
+
+    3-) git reset [Id_Git] --hard: Borra absolutamente todo. Toda la información de los commits
+            y del área de staging se borra del historial.
+
+    4-) git reset HEAD: No borra los archivos ni sus modificaciones,
+            solo los saca del área de staging, de forma que los últimos cambios de
+            estos archivos no se envíen al último commit. Si se cambia de opinión
+            se los puede incluir nuevamente con git add.
 
 //----------//----------//----------//----------//----------//----------//----------//
 //----------//----------// GIT-BASIC - COMMANDS FOR REPOSITORY //----------//----------//
@@ -43,17 +91,37 @@ Working Directory --> Staging Area --> Committed Files --> Remote Repository (Se
 //----------//----------// GIT-BASIC - SHOW DIFERENTS //----------//----------//
 //----------//----------//----------//----------//----------//----------//----------//
 
-    1-) git log: lista de manera descendente los commits realizados.
+    GIT LOG -->
 
-    2-) git log --stat: además de listar los commits, muestra la cantidad de bytes añadidos
-            y eliminados en cada uno de los archivos modificados.
+    Adicionalmente, tenemos otros comandos que nos sirven para trabajar en proyectos muy grandes:
 
-    3-) git log --all --graph --decorate --oneline: muestra de manera comprimida
+    01-) git log: lista de manera descendente los commits realizados.
+    02-) git log --oneline:Te muestra el id commit y el título del commit.
+    03-) git log --decorate: Te muestra donde se encuentra el head point en el log.
+    04-) git log --stat: Explica el número de líneas que se cambiaron brevemente.
+    05-) git log -p: Explica el número de líneas que se cambiaron y te muestra que se cambió en el contenido.
+    06-) git log --graph --oneline --decorate y
+    07-) git log --pretty=format:"%cn hizo un commit %h el dia %cd": Muestra mensajes personalizados de los commits.
+    08-) git log -3: Limitamos el número de commits.
+    09-) git log --after=“2018-1-2”
+    10-) git log --after=“today” y
+    11-) git log --after=“2018-1-2” --before=“today”: Commits para localizar por fechas.
+    12-) git log --author=“Name Author”: Commits hechos por autor que cumplan exactamente con el nombre.
+    13-) git log --grep=“INVIE”: Busca los commits que cumplan tal cual está escrito entre las comillas.
+    14-) git log --grep=“INVIE” –i: Busca los commits que cumplan sin importar mayúsculas o minúsculas.
+    15-) git log – index.html: Busca los commits en un archivo en específico.
+    16-) git log -S “Por contenido”: Buscar los commits con el contenido dentro del archivo.
+    17-) git log > log.txt: guardar los logs en un archivo txt
+    18-) git log --all --graph --decorate --oneline: muestra de manera comprimida
             toda la historia del repositorio de manera gráfica y embellecida.
 
-    4-) git show filename: permite ver la historia de los cambios en un archivo.
+    GIT {SHOW, DIFF, SHORTLOG}
 
-    5-) git diff <commit1> <commit2>: compara diferencias entre en cambios confirmados.
+    1-) git show filename: permite ver la historia de los cambios en un archivo.
+
+    2-) git diff <commit1> <commit2>: compara diferencias entre en cambios confirmados.
+    
+    3-) git shortlog: Indica que commits ha realizado un usuario, mostrando el usuario y el título de sus commits.
 
 //----------//----------//----------//----------//----------//----------//----------//
 //----------//----------// GIT-BASIC - SHOW DIFERENTS //----------//----------//
@@ -68,7 +136,76 @@ Working Directory --> Staging Area --> Committed Files --> Remote Repository (Se
     2-) git config --global user.name [TU NOMBRE]
 
     3-) git config --list: lista las configuraciones.
+
+    OTHERS:-->
+
+    NOTE: Si por algún motivo te equivocaste en el nombre o email que configuraste
+        al principio, lo puedes modificar de la siguiente manera:
+
+    1-) git config --global --replace-all user.name “Aquí va tu nombre modificado”
+            O si lo deseas eliminar y añadir uno nuevo
+
+    2-) git config --global --unset-all user.name :Elimina el nombre del usuario
+
+    3-) git config --global --add user.name “Aquí va tu nombre”
             
 //----------//----------//----------//----------//----------//----------//----------//
 //----------//----------// GIT-BASIC - COMMANDS FOR CONFIG //----------//----------//
 //----------//----------//----------//----------//----------//----------//----------//
+
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - INSTALL GIT //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//
+
+    sudo apt-get update
+    
+    sudo apt install git
+    
+    git --version
+
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - INSTALL GIT //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//
+
+    Conceptos importantes de Git:
+        
+    Bug: Error en el código
+        
+    Repository: Donde se almacena todo el proyecto, el cual puede vivir tanto en local como en remoto.
+        El repositorio guarda un historial de versiones y, más importante, de la relación de cada versión
+        con la anterior para que pueda hacerse el árbol de versiones con las diferentes ramas.
+
+    Fork: Si en algún momento queremos contribuir al proyecto de otra persona, o si queremos utilizar el
+        proyecto de otro como el punto de partida del nuestro. Esto se conoce como “fork”.
+
+    Clone: Una vez se decide hacer un fork , hasta ese momento sólo existe en GitHub.
+        Para poder trabajar en el proyecto, toca clonar el repositorio elegido al computador personal.
+
+    Branch: Es una bifurcación del proyecto que se está realizando para anexar
+        una nueva funcionalidad o corregir un bug.
+
+    Master: Rama donde se almacena la última versión estable del proyecto que se está realizando.
+        La rama master es la que está en producción en cada momento (o casi) y debería estar libre de bugs.
+        Así, si esta rama está en producción, sirve como referente para hacer nuevas funcionalidades
+        y/o arreglarbugs de última hora.
+
+    Commit: consiste en subir cosas a la versión local del repositorio. De esta manera se puede trabajar
+        en la rama de forma local sin tener que modificar ninguna versión en remoto ni tener que tener
+        la última versión remota, cosa muy útil en grandes desarrollos trabajados por varias personas.
+
+    Push: Consiste en enviar todo lo que se ha confirmado con un commit al repositorio remoto.
+        Aquí es donde se une nuestro trabajo con el de los demás.
+
+    Checkout: Acción de descargarse una rama del repositorio GIT local (sí, GIT tiene su propio repositorio
+        en local para poder ir haciendo commits) o remoto.
+
+    Fetch: Actualiza el repositorio local bajando datos del repositorio remoto al repositorio local sin actualizarlo,
+        es decir, se guarda una copia del repositorio remoto en el local.
+
+    Merge: La acción de merge es la continuación natural del fetch. El merge permite unir la copia del repositorio
+        remoto con tu repositorio local, mezclando los diferentes códigos.
+
+    Pull: Consiste en la unión del fetch y del merge, esto es, recoge la información del repositorio remoto y
+        luego mezcla el trabajo en local con esta.
+
+    Diff: Se utiliza para mostrar los cambios entre dos versiones del mismo archivo.
