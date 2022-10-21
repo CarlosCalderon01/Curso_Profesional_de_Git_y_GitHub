@@ -1,0 +1,43 @@
+//----------//----------// COMPONENTS OF GITS //----------//----------//
+
+    Working Directory --> Staging Area --> Committed Files --> Remote Repository (Server)
+
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - COMMANDS FOR CONFIG //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//
+
+    1-) git config --global user.email [TU EMAIL]
+
+    2-) git config --global user.name [TU NOMBRE]
+
+    3-) git config --list: lista las configuraciones
+
+    + OTHERS -->
+
+    NOTE: Si por algún motivo te equivocaste en el nombre o email que configuraste
+        al principio, lo puedes modificar de la siguiente manera:
+
+    1-) git config --global --replace-all user.name “Aquí va tu nombre modificado”
+            O si lo deseas eliminar y añadir uno nuevo
+
+    2-) git config --global --unset-all user.name :Elimina el nombre del usuario
+
+    3-) git config --global --add user.name “Aquí va tu nombre”
+            
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - COMMANDS FOR CONFIG //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//
+
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - INSTALL GIT //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//
+
+    sudo apt-get update
+    
+    sudo apt install git
+    
+    git --version
+
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - INSTALL GIT //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//

@@ -1,0 +1,99 @@
+    COMPONENTS OF GITS: //----------//----------//----------//----------//----------//
+
+Working Directory --> Staging Area --> Committed Files --> Remote Repository (Server)
+
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - COMMANDS FOR REPOSITORY //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//
+
+    CONTENT -> GIT { INIT , CLONE }
+
+        1-) git init --> Create new repository in actual directory.
+
+        2-) git init [file] --> Create new repository in new directory.
+        
+        3-) git clone [URL HTTPS] --> Descarga el repositorio.
+
+    CONTENT -> GIT { STATUS , ADD , COMMIT , PUSH }
+
+        1-) git status --> ofrece una descripción del estado de los archivos
+                (untracked, ready to commit, nothing to commit).
+
+        2-) git add [file || .]: añade los archivos especificados al área de preparación (staging).
+
+        3-) git commit -m “[commit description]”: confirma los archivos que se encuentran
+                en el área de preparación y los agrega al repositorio.
+
+        4-) git push [name][branch] --> Committed Files Save In Remote Repository
+
+//----------//----------//----------//----------//----------//----------//----------//
+
+    CONTENT -> GIT { CHECKOUT , BRANCH }
+
+    1-) git checkout <commit/branch> <filename>: permite regresaral estado en el cual se realizó
+            un commit o branch especificado, pero no elimina lo que está en el staging area.
+
+    2-) git checkout --<filePath>: deshacer cambios en un archivo en estado modified
+            (que ni fue agregado a staging)
+
+    3-) git branch: crear una nueva rama.
+
+//----------//----------//----------//----------//----------//----------//----------//
+
+    CONTENT -> GIT { FETCH , MERGE , PULL }
+
+    1-) git fetch --> traer actualizaciones del servidor remoto y guardarlas en nuestro
+            repositorio local.
+
+    2-) git merge: tiene dos usos. Uno es la fusión de ramas, funcionando como un commit
+            en la rama actual, trayendo la rama indicada. Su otro uso es guardar
+            los cambios de un servidor remoto en nuestro directorio.
+        
+    3-) git pull: fetch y merge al mismo tiempo.
+
+//----------//----------//----------//----------//----------//----------//----------//
+
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - COMMANDS FOR REPOSITORY //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//
+
+    CONTENT -> GIT { RM , RESET }
+
+    1-) git rm (. -r, filename) (--cached): remueve los archivos del index.
+
+    2-) git rm --cached <archivo/s>: elimina los archivos del área de Staging y
+            del próximo commit, pero los mantiene en nuestro disco duro.
+
+    3-) git rm --force <archivo/s>: elimina los archivos de Git y del disco duro.
+            Git siempre guarda todo, por lo que podemos acceder al registro de la existencia
+            de los archivos, de modo que podremos recuperarlos si es necesario
+            (pero debemos aplicar comandos más avanzados).
+        
+    1-) git reset <commit> --soft/hard: regresa al commit especificado, eliminando
+            todos los cambios que se hicieron después de ese commit.
+
+    2-) git reset [Id_Git] --soft: Vuelve el branch al estado del commit especificado,
+            manteniendo los archivos en el directorio de trabajo y lo que haya
+            en staging considerando todo como nuevos cambios. Así podemos aplicar
+            las últimas actualizaciones a un nuevo commit.
+
+    3-) git reset [Id_Git] --hard: Borra absolutamente todo. Toda la información de los commits
+            y del área de staging se borra del historial.
+
+    4-) git reset HEAD: No borra los archivos ni sus modificaciones,
+            solo los saca del área de staging, de forma que los últimos cambios de
+            estos archivos no se envíen al último commit. Si se cambia de opinión
+            se los puede incluir nuevamente con git add.
+
+    CONTENT -> GIT {SHOW, DIFF, SHORTLOG}
+
+    1-) git show filename: permite ver la historia de los cambios en un archivo.
+
+    2-) git diff <commit1> <commit2>: compara diferencias entre en cambios confirmados.
+    
+    3-) git shortlog: Indica que commits ha realizado un usuario, mostrando el usuario y el título de sus commits.
+
+
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - COMMANDS FOR REPOSITORY //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//

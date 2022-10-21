@@ -1,0 +1,32 @@
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - SHOW DIFERENTS //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//
+
+    GIT LOG -->
+
+    Adicionalmente, tenemos otros comandos que nos sirven para trabajar en proyectos muy grandes:
+
+    01-) git log: lista de manera descendente los commits realizados.
+    02-) git log --oneline:Te muestra el id commit y el título del commit.
+    03-) git log --decorate: Te muestra donde se encuentra el head point en el log.
+    04-) git log --stat: Explica el número de líneas que se cambiaron brevemente.
+    05-) git log -p: Explica el número de líneas que se cambiaron y te muestra que se cambió en el contenido.
+    06-) git log --graph --oneline --decorate y
+    07-) git log --pretty=format:"%cn hizo un commit %h el dia %cd": Muestra mensajes personalizados de los commits.
+    08-) git log -3: Limitamos el número de commits.
+    09-) git log --after=“2018-1-2”
+    10-) git log --after=“today” y
+    11-) git log --after=“2018-1-2” --before=“today”: Commits para localizar por fechas.
+    12-) git log --author=“Name Author”: Commits hechos por autor que cumplan exactamente con el nombre.
+    13-) git log --grep=“INVIE”: Busca los commits que cumplan tal cual está escrito entre las comillas.
+    14-) git log --grep=“INVIE” –i: Busca los commits que cumplan sin importar mayúsculas o minúsculas.
+    15-) git log – index.html: Busca los commits en un archivo en específico.
+    16-) git log -S “Por contenido”: Buscar los commits con el contenido dentro del archivo.
+    17-) git log > log.txt: guardar los logs en un archivo txt
+    18-) git log --all --graph --decorate --oneline: muestra de manera comprimida
+            toda la historia del repositorio de manera gráfica y embellecida.
+
+
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - SHOW DIFERENTS //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//
