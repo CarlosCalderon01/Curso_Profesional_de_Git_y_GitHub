@@ -48,6 +48,8 @@ Working Directory --> Staging Area --> Committed Files --> Remote Repository (Se
     2-) git merge: tiene dos usos. Uno es la fusión de ramas, funcionando como un commit
             en la rama actual, trayendo la rama indicada. Su otro uso es guardar
             los cambios de un servidor remoto en nuestro directorio.
+
+        git merge --abort: Cómo revertir un merge
         
     3-) git pull: fetch y merge al mismo tiempo.
 
