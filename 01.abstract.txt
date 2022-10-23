@@ -61,29 +61,24 @@ Working Directory --> Staging Area --> Committed Files --> Remote Repository (Se
 
     1-) git rm (. -r, filename) (--cached): remueve los archivos del index.
 
-    2-) git rm --cached <archivo/s>: elimina los archivos del área de Staging y
-            del próximo commit, pero los mantiene en nuestro disco duro.
+    2-) git rm --cached <archivo/s>: elimina los archivos en staging pero
+            los mantiene en el disco duro.
 
-    3-) git rm --force <archivo/s>: elimina los archivos de Git y del disco duro.
-            Git siempre guarda todo, por lo que podemos acceder al registro de la existencia
-            de los archivos, de modo que podremos recuperarlos si es necesario
-            (pero debemos aplicar comandos más avanzados).
+    3-) git rm --force <archivo/s>: elimina los archivos de git y del disco duro.
         
-    1-) git reset <commit> --soft/hard: regresa al commit especificado, eliminando
+    1-) git reset <commit> --soft: regresa al commit especificado, eliminando
             todos los cambios que se hicieron después de ese commit.
 
-    2-) git reset [Id_Git] --soft: Vuelve el branch al estado del commit especificado,
-            manteniendo los archivos en el directorio de trabajo y lo que haya
-            en staging considerando todo como nuevos cambios. Así podemos aplicar
-            las últimas actualizaciones a un nuevo commit.
+    1.1-)   git reset <commit> --hard: todo vuelve a su versión anterior
+
+    2-) git reset [Id_Git] --soft: vuelve a la versión en el repositorio, pero
+            guarda los cambios en staging. Así, podemos aplicar actualizaciones
+            a un nuevocommit.
 
     3-) git reset [Id_Git] --hard: Borra absolutamente todo. Toda la información de los commits
             y del área de staging se borra del historial.
 
-    4-) git reset HEAD: No borra los archivos ni sus modificaciones,
-            solo los saca del área de staging, de forma que los últimos cambios de
-            estos archivos no se envíen al último commit. Si se cambia de opinión
-            se los puede incluir nuevamente con git add.
+    4-) git reset HEAD: saca los cambios de staging, pero no los borra. Es lo opuesto a git add.
 
     CONTENT -> GIT {SHOW, DIFF, SHORTLOG}
 
