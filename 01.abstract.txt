@@ -94,3 +94,30 @@ Working Directory --> Staging Area --> Committed Files --> Remote Repository (Se
 //----------//----------//----------//----------//----------//----------//----------//
 //----------//----------// GIT-BASIC - COMMANDS FOR REPOSITORY //----------//----------//
 //----------//----------//----------//----------//----------//----------//----------//
+
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// Tags y versiones en Git y GitHub 23/43 //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//
+
+    How to crate and delete tags:
+
+        1-) git log --all --graph --decorate --oneline
+
+        2-) alias arbolito "git log --all --graph --decorate --oneline"
+
+    para crear un Tags:
+        git tag -a v0.1 -m "Resultado de mis priemra clases del curso" [has]
+    Example:
+        git tag -a v0.1 -m "Resultado de mis primera clases del curso" 5740104f80d2d7b312e259a663a28e47593c9a13
+
+        3-) git show-ref --tags --> para Comprobar
+
+        4-) git push origin --tags: --> para empujar lso tags a origin que hemos creado
+
+    Como borrar un tag:
+
+        git tag -d [nametag]
+
+        git push origin :refs/tags/[nametag]
+
+
