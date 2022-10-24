@@ -41,3 +41,49 @@
 //----------//----------//----------//----------//----------//----------//----------//
 //----------//----------// GIT-BASIC - INSTALL GIT //----------//----------//
 //----------//----------//----------//----------//----------//----------//----------//
+
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - CLAVES SSH //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//
+
+    1-) Buscar llasves en el sitema --> ls -al ~/.ssh
+
+        Example: { id_rsa.pub , id_ecdsa.pub , id_ed25519.pub }    
+
+    2-) Crear un ssh con mi correo:
+
+        ssh-keygen -t ed25519 -C "Carlos.Calderon01@outlook.com"
+
+    3-) Ubicacion de mi SSH: -->
+
+        /home/kuro/.ssh/id_ed25519
+
+        /home/kuro/.ssh/id_ed25519.pub
+
+    4-) Comprobar si el ssh ESTA FUNCIONANDO BIEN -->
+
+        eval $(ssh-agent -s)
+
+    5-) Agregar mi clave ssh:
+
+            ssh-add ~[Ubicacion]
+
+        Example: ssh-add ~/.ssh/id_ed25519
+
+        lo que se espera:
+        Enter passphrase for /home/kuro/.ssh/id_ed25519: 
+        Identity added: /home/kuro/.ssh/id_ed25519 (Carlos.Calderon01@outlook.com~)
+
+    6-) copiar mi clave publica y agregarla en el git_hub
+
+    7-) Cambiar la URL de origin
+    
+        git remote -v: para ver mi actual
+        
+        git remote set-url origin [git@github.com:CarlosCalderon01/Curso_Profesional_de_Git_y_GitHub.git]
+        
+   
+
+//----------//----------//----------//----------//----------//----------//----------//
+//----------//----------// GIT-BASIC - CLAVES SSH //----------//----------//
+//----------//----------//----------//----------//----------//----------//----------//
