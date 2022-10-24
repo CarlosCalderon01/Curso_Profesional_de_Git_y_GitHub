@@ -38,6 +38,8 @@ Working Directory --> Staging Area --> Committed Files --> Remote Repository (Se
 
     3-) git branch: crear una nueva rama.
 
+    4-) git push origin --delete calderon: --> 
+
 //----------//----------//----------//----------//----------//----------//----------//
 
     CONTENT -> GIT { FETCH , MERGE , PULL }
@@ -129,7 +131,8 @@ Working Directory --> Staging Area --> Committed Files --> Remote Repository (Se
         2-) gitk
 
 //----------//----------//----------//----------//----------//----------//----------//
-//----------//----------// Manejo de ramas en GitHub 24/43 //----------//----------//
+        Configurar múltiples colaboradores en un repositorio de GitHub 32/43
 //----------//----------//----------//----------//----------//----------//----------//
+
 
 
