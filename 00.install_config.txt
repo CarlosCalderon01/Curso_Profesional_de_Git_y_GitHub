@@ -81,8 +81,6 @@
         git remote -v: para ver mi actual
         
         git remote set-url origin [git@github.com:CarlosCalderon01/Curso_Profesional_de_Git_y_GitHub.git]
-        
-   
 
 //----------//----------//----------//----------//----------//----------//----------//
 //----------//----------// GIT-BASIC - CLAVES SSH //----------//----------//
